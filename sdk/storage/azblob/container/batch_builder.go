@@ -44,7 +44,6 @@ func (bb *BatchBuilder) Delete(blobName string, options *BatchDeleteOptions) err
 		return err
 	}
 
-	blobName = url.PathEscape(blobName)
 	blobURL := runtime.JoinPaths(bb.endpoint, blobName)
 
 	blobClient, err := blob.NewClientWithNoCredential(blobURL, nil)
